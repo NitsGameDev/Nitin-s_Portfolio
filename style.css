@@ -1,0 +1,96 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Light Grey Background */
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header Styling */
+header {
+    background: #3498db; /* Blue Color */
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #2980b9 3px solid;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 0 15px;
+}
+
+header a:hover {
+    color: #ecf0f1;
+}
+
+/* Section Styling */
+section {
+    padding: 20px 0;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #3498db;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* Projects Card Styling */
+.project-card {
+    background: #ecf0f1;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: #3498db 5px solid;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Footer Styling */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Simple Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+    header nav a {
+        display: block;
+        padding: 5px 0;
+    }
+}
