@@ -8,8 +8,8 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Light Grey Background */
-    color: #333;
+    background-color: #0b0a1a; /* Deep Dark Blue/Purple Background */
+    color: #e0e0e0; /* Light text color */
 }
 
 .container {
@@ -18,79 +18,345 @@ body {
     overflow: hidden;
 }
 
-/* Header Styling */
+/* --- Header Styling (Cyberpunk Theme) --- */
 header {
-    background: #3498db; /* Blue Color */
+    position: relative; 
+    z-index: 10; 
+    
+    background: #15142b; /* Slightly lighter dark header */
     color: #fff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #2980b9 3px solid;
+    padding: 60px 0 40px 0; 
+    min-height: 100px;
+    border-bottom: #00eaff 5px solid; /* Neon Cyan border */
     text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); 
 }
 
-header h1 {
+/* Site Title (Name) - 3D Effect Applied */
+.site-title {
+    font-size: 3.5em; 
     margin-bottom: 5px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ffffff;
+    
+    /* 3D Depth Effect + Static Neon Cyan Glow */
+    text-shadow: 
+        1px 1px 0 #080715, 
+        2px 2px 0 #05040f, 
+        3px 3px 0 #02010a, 
+        4px 4px 0 #010005,
+        /* Static Neon Cyan Glow */
+        0 0 15px #00eaff, 0 0 25px #00eaff; 
 }
 
-header a {
-    color: #fff;
+/* Tagline (Title) */
+.tagline {
+    font-size: 1.5em;
+    color: #ffb300; /* Highlighted in Warm Yellow/Orange */
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+/* Navigation Menu */
+.main-nav {
+    margin-top: 20px;
+}
+
+.nav-link {
+    color: #e0e0e0; /* Default link color */
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 16px;
-    padding: 0 15px;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease; 
+    letter-spacing: 1px;
 }
 
-header a:hover {
-    color: #ecf0f1;
+.nav-link:hover {
+    color: #00eaff; /* Neon Cyan text on hover */
+    border-color: #00eaff; /* Neon Cyan border on hover */
+    background-color: rgba(0, 234, 255, 0.1); /* Subtle background fill */
+    border-radius: 5px;
 }
 
 /* Section Styling */
 section {
+    position: relative;
+    z-index: 5; 
+    
     padding: 20px 0;
     margin-bottom: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #15142b; /* Section background color */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
+    border-radius: 8px;
 }
 
-section h2 {
-    color: #3498db;
+.section-title {
+    color: #00eaff; /* Highlight color for headers (Neon Cyan) */
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 2em;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    font-weight: 700;
 }
 
-/* Projects Card Styling */
-.project-card {
-    background: #ecf0f1;
-    padding: 15px;
+.section-title i {
+    margin-right: 10px;
+}
+
+/* --- About Section Specific Styling --- */
+.intro-paragraph {
+    font-size: 1.15em;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 20px auto; 
+    padding: 20px;
+    border-left: 5px solid #d800ff; /* Magenta/Purple accent */
+    background-color: #1f1e3c; /* Darker card/paragraph background */
+    color: #f1f1f1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    
+    position: relative; 
+    z-index: 105; /* Above objects (100) */
+}
+
+/* --- Skills Container Styling --- */
+.skills-container {
+    padding: 10px 0; 
+}
+
+.skills-container h3 {
+    text-align: center;
+    color: #b0b0b0;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.skills-container p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-style: italic;
+    color: #888;
+}
+
+/* --- Keyframe Animation for Skill Cards --- */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Skills Grid (Card Layout) --- */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; 
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.skill-card {
+    position: relative; 
+    z-index: 95; /* Below objects (100) */
+
+    background-color: #1f1e3c; /* Darker card background */
+    border: 1px solid #302f5a; /* Subtle dark border */
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    padding: 25px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    flex-grow: 1;
+    max-width: 300px;
+    
+    animation: fadeInSlideUp 0.6s ease-out both;
+}
+
+.skills-grid .skill-card:nth-child(1) { animation-delay: 0.1s; }
+.skills-grid .skill-card:nth-child(2) { animation-delay: 0.2s; }
+.skills-grid .skill-card:nth-child(3) { animation-delay: 0.3s; }
+.skills-grid .skill-card:nth-child(4) { animation-delay: 0.4s; }
+.skills-grid .skill-card:nth-child(5) { animation-delay: 0.5s; }
+
+.skill-card:hover {
+    transform: translateY(-7px) scale(1.02); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); 
+    border-color: #d800ff; /* Magenta highlight border on hover */
+}
+
+.card-icon {
+    font-size: 3em;
+    color: #ffb300; /* Warm Yellow/Orange Accent */
     margin-bottom: 15px;
-    border-left: #3498db 5px solid;
+    display: block;
+    transition: color 0.3s;
 }
 
-.project-card a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #3498db;
-    text-decoration: none;
-    font-weight: bold;
+.skill-card:hover .card-icon {
+    color: #d800ff; /* Icon color change to Magenta on hover */
+}
+
+.skill-card h4 {
+    margin-top: 0;
+    color: #f1f1f1; 
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.skill-card:hover h4 {
+    color: #00eaff; /* Title color change to Neon Cyan on hover */
+}
+
+.skill-card p {
+    font-size: 0.95em;
+    color: #b0b0b0; 
+    margin-bottom: 0;
+    text-align: center;
+    font-style: normal;
+    line-height: 1.4;
 }
 
 /* Footer Styling */
 footer {
-    background: #333;
+    background: #000;
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 15px; 
     margin-top: 20px;
+    z-index: 10;
+    position: relative;
 }
 
-/* Simple Responsive Design */
-@media (max-width: 600px) {
+/* Responsive Design */
+@media (max-width: 768px) {
     .container {
         width: 95%;
     }
-    header nav a {
-        display: block;
-        padding: 5px 0;
+    .skills-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .skill-card {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+
+/* --- Floating Gaming Objects Background --- */
+
+/* Parent container for the objects */
+.gaming-background-objects {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 100; /* Objects appear ABOVE the cards (95) */
+    pointer-events: none;
+}
+
+/* Individual Floating Object Styling */
+.floating-object {
+    position: absolute;
+    background: rgba(0, 234, 255, 0.2); /* Neon Cyan with transparency */
+    border-radius: 10px;
+    filter: blur(4px); 
+    opacity: 0.6;
+    animation: float-and-rotate linear infinite; 
+}
+
+/* Specific Sizes, Shapes and Positions for each object */
+.object-1 {
+    width: 100px; height: 100px;
+    top: 10%; left: 5%;
+    background: rgba(216, 0, 255, 0.3); /* Magenta/Purple */
+    animation-duration: 15s;
+    animation-delay: 0s;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+}
+
+.object-2 {
+    width: 70px; height: 70px;
+    top: 50%; left: 15%;
+    background: rgba(0, 234, 255, 0.3); /* Neon Cyan */
+    animation-duration: 18s;
+    animation-delay: 2s;
+    border-radius: 50%; 
+}
+
+.object-3 {
+    width: 120px; height: 80px;
+    top: 20%; right: 10%;
+    background: rgba(255, 179, 0, 0.3); /* Warm Yellow/Orange */
+    animation-duration: 13s;
+    animation-delay: 4s;
+    border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%; 
+}
+
+.object-4 {
+    width: 60px; height: 60px;
+    bottom: 10%; right: 5%;
+    background: rgba(216, 0, 255, 0.3); /* Magenta/Purple */
+    animation-duration: 20s;
+    animation-delay: 6s;
+    border-radius: 20px; 
+}
+
+.object-5 {
+    width: 90px; height: 90px;
+    bottom: 30%; left: 25%;
+    background: rgba(0, 234, 255, 0.3); /* Neon Cyan */
+    animation-duration: 16s;
+    animation-delay: 8s;
+    border-radius: 50%; 
+}
+
+.object-6 {
+    width: 110px; height: 70px;
+    top: 70%; right: 20%;
+    background: rgba(255, 179, 0, 0.3); /* Warm Yellow/Orange */
+    animation-duration: 14s;
+    animation-delay: 10s;
+    border-radius: 60% 40% 70% 30% / 30% 70% 40% 60%; 
+}
+
+
+/* Keyframes for Floating and Rotating Animation */
+@keyframes float-and-rotate {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        opacity: 0.7;
+    }
+    25% {
+        transform: translate(20px, -10px) rotate(45deg) scale(0.95);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(-10px, 30px) rotate(90deg) scale(1.05);
+        opacity: 0.7;
+    }
+    75% {
+        transform: translate(30px, 10px) rotate(135deg) scale(0.98);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(0, 0) rotate(180deg) scale(1);
+        opacity: 0.7;
     }
 }
