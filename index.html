@@ -75,27 +75,48 @@
 
 <section id="projects" class="projects-section">
     <div class="container">
-        <h2 class="section-title">📂 Projects</h2> 
+        <h2 class="section-title">
+            <i class="fab fa-unity"></i> Projects
+        </h2> 
         <div class="project-card">
-            <h3>Project 1: Website Design</h3>
-            <p>HTML અને CSS નો ઉપયોગ કરી ને બનાવેલું એક modern website layout.</p>
-            <a href="#" target="_blank">Demo Jovo</a>
+            <h3><img src="Marriage card game icon.webp" alt="Marriage Card Game Icon" class="project-title-icon"> Marriage Card Game</h3> 
+            <p>
+                "Marriage, a top-rated offline card game, delivers continuous entertainment. The game accommodates 2 to 5 players and utilizes 156 cards, composed of three complete 52-card decks. The game does not use printed jokers; instead, wild cards are dynamically created during each hand, and these are collectively known to players as 'jokers'."
+            </p>
+            <a href="https://play.google.com/store/apps/details?id=com.oengines.marriage&hl=en" target="_blank">
+                <i class="fab fa-google-play"></i> Google Play
+            </a>
         </div>
         <div class="project-card">
-            <h3>Project 2: Interactive App</h3>
-            <p>JavaScript ની મદદ થી બનાવેલું એક simple calculator અથવા game.</p>
-            <a href="#" target="_blank">Demo Jovo</a>
+            <h3><img src="Carioca game icon.webp" alt="Carioca game icon" class="project-title-icon"> Carioca Card Game</h3> 
+            <p>
+                Developed and launched a digital version of the highly popular Carioca card game, designed to provide an engaging and comprehensive offline gaming experience. The application challenges players across the game's traditional and complex 8 strategic rounds, ensuring high replay value and a substantial test of skill.
+            </p>
+            <a href="https://play.google.com/store/apps/details?id=com.fabio.carioca&hl=en" target="_blank">
+                <i class="fab fa-google-play"></i> Google Play
+            </a>
         </div>
-    </div>
+          <div class="project-card">
+            <h3><img src="Tongits game icon.webp" alt="Tongits game icon" class="project-title-icon"> Tongits Card Game</h3> 
+            <p>
+                Developed a high-quality, modern digital adaptation of Tongits, one of the Philippines' most popular and strategically deep card games. Tongits, a distinct variant of the Rummy family, is designed specifically for three players, offering a unique blend of skill, strategy, and chance.
+            </p>
+            <a href="https://apps.apple.com/in/app/tongits-card-game-tong-its/id1671501450" target="_blank">
+                <i class="fab fa-app-store"></i> Apple App Store
+            </a>
+        </div>
+        </div>
 </section>
 
 <section id="contact" class="contact-section">
     <div class="container">
-        <h2 class="section-title">📞 Contact</h2> 
+        <h2 class="section-title">
+    <i class="fas fa-phone contact-title-icon"></i> Contact
+</h2>
         <p>
-            Maro contact karva mate: <br>
-            Email: your.email@example.com <br>
-            LinkedIn: /in/yourprofile
+            <i class="fas fa-envelope contact-icon"></i> <a href="mailto:nitingamedev2921@gmail.com" class="contact-link">nitingamedev2921@gmail.com</a> <br>
+            
+            <i class="fab fa-linkedin contact-icon"></i> <a href="https://www.linkedin.com/in/nitin-rakholiya-46534017a/?originalSubdomain=in" target="_blank" class="contact-link">nitin-rakholiya</a>
         </p>
     </div>
 </section>
@@ -116,31 +137,28 @@
 
 
 <script>
+    // Smooth Scroll Logic (power2.out સાથે)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = this.getAttribute('href');
 
-            // GSAP નો ઉપયોગ કરીને Bounce Scroll Animation
+            // GSAP નો ઉપયોગ કરીને સ્મૂથ સ્ક્રોલ
             gsap.to(window, {
-                duration: 1.5, // સ્ક્રોલની અવધિ
+                duration: 1, 
                 scrollTo: target,
-                ease: "elastic.out(1, 0.5)" // આકર્ષક બાઉન્સ ઇફેક્ટ
+                ease: "power2.out"
             });
         });
     });
 
-    // NEW: Function to randomize the border-radius shape
+    // Function to randomize the border-radius shape 
     function randomizeObjectShapes() {
         const objects = document.querySelectorAll('.floating-object');
 
         objects.forEach(object => {
-            // 20% થી 80% વચ્ચે રેન્ડમ ટકાવારી જનરેટ કરે છે
             const randomPercent = () => Math.floor(Math.random() * 60) + 20 + '%';
-
-            // 8 રેન્ડમ વેલ્યુનો ઉપયોગ કરીને આકર્ષક, અનિયમિત આકાર બનાવે છે
             const radiusString = `${randomPercent()} ${randomPercent()} ${randomPercent()} ${randomPercent()} / ${randomPercent()} ${randomPercent()} ${randomPercent()} ${randomPercent()}`;
-
             object.style.borderRadius = radiusString;
         });
     }
@@ -150,21 +168,6 @@
     
     // ઑબ્જેક્ટ્સને દર 10 સેકન્ડે (10000ms) બદલતા રહો
     setInterval(randomizeObjectShapes, 10000); 
-
-    // GSAP Scrolling Logic (Remains the same)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = this.getAttribute('href');
-
-            // GSAP નો ઉપયોગ કરીને Scroll Animation
-            gsap.to(window, {
-                duration: 1.5,
-                scrollTo: target,
-                ease: "elastic.out(1, 0.5)" 
-            });
-        });
-    });
 </script>
 </body>
 </html>

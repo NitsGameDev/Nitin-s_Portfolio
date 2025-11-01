@@ -281,6 +281,19 @@ section {
 .project-card h3 {
     color: #ffb300;
     margin-bottom: 10px;
+
+    /* 🟢 NEW CSS FOR ICON ALIGNMENT IN TITLE 🟢 */
+    display: flex;
+    align-items: center; /* Vertical Center માં ગોઠવવા માટે */
+    gap: 10px; /* આઇકન અને લખાણ વચ્ચેની જગ્યા */
+}
+
+/* ઇમેજ આઇકનને કદ આપવા માટે */
+.project-title-icon {
+    width: 30px;   
+    height: 30px;
+    border-radius: 6px; /* એપ્લિકેશન આઇકન માટે થોડું ગોળાકાર */
+    object-fit: cover;
 }
 
 .project-card p {
@@ -298,11 +311,19 @@ section {
     padding: 5px 10px;
     border-radius: 5px;
     transition: background-color 0.3s;
+    /* 🟢 FIX: Google Play Icon Alignment */
+    display: inline-flex;
+    align-items: center;
 }
 
 .project-card a:hover {
     background-color: #00eaff;
     color: #15142b;
+}
+
+/* 🟢 FIX: Icon Spacing for Project Link */
+.project-card a i {
+    margin-right: 8px;
 }
 
 /* Contact Section Styling */
@@ -332,7 +353,6 @@ footer {
 }
 
 /* --- Floating Gaming Objects Background --- */
-/* The objects' Z-index is 100, which is ABOVE the cards (95) but BELOW the main content (105) */
 
 .gaming-background-objects {
     position: fixed;
@@ -357,7 +377,7 @@ footer {
 }
 
 
-/* Responsive Design */
+/* --- Responsive Design --- */
 @media (max-width: 992px) {
     .container {
         width: 90%;
@@ -369,7 +389,14 @@ footer {
         padding: 8px 15px;
     }
     .intro-paragraph {
-        text-align: left;
+        /* text-align: left; - આને દૂર કર્યું છે, કારણ કે સેન્ટર સારું છે */
+    }
+    .skills-grid {
+        gap: 20px;
+    }
+    .skill-card {
+        width: 45%; 
+        max-width: 300px;
     }
 }
 
@@ -380,6 +407,7 @@ footer {
     .tagline {
         font-size: 1.3em;
     }
+    /* 🛠️ FIX: Navigation Alignment */
     .main-nav {
         display: flex;
         flex-direction: column;
@@ -387,7 +415,11 @@ footer {
     }
     .nav-link {
         margin: 5px 0;
+        width: 100%;       /* Added for better click area */
+        max-width: 250px;  /* Added for limiting width */
+        text-align: center;
     }
+    /* 🛠️ FIX: Skills Alignment */
     .skills-grid {
         flex-direction: column;
         align-items: center;
@@ -396,5 +428,31 @@ footer {
     .skill-card {
         width: 95%;
         max-width: none;
+    }
+}
+
+/* 🟢 NEW: Extra Small Screen Adjustments */
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+    header {
+        padding: 40px 0 20px 0;
+    }
+    .site-title {
+        font-size: 2em; /* ટાઇટલને વધુ નાનું કરો */
+        letter-spacing: 2px;
+    }
+    .tagline {
+        font-size: 1em;
+    }
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
+    .intro-paragraph {
+        font-size: 1.1em;
+        padding: 15px;
+        border-left: 4px solid #d800ff;
     }
 }
